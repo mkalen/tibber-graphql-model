@@ -1,6 +1,8 @@
 package no.tibber.api.model;
 
-import io.aexp.nodes.graphql.annotations.GraphQLArgument;
+import java.util.Arrays;
+
+import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
 import io.aexp.nodes.graphql.annotations.GraphQLProperty;
 
 /**
@@ -11,28 +13,27 @@ import io.aexp.nodes.graphql.annotations.GraphQLProperty;
 @GraphQLProperty(name = "viewer")
 public class HomesRequest extends Viewer {
 
-    @GraphQLProperty(name = "home", arguments={
-	        @GraphQLArgument(name = "id")
-	})
-	public Home home;
-	
-	public HomesRequest() {
-	    super();
-	}
+    @GraphQLIgnore
+    private static final long serialVersionUID = 1L;
 
-    public Home getHome() {
-        return home;
+    @GraphQLProperty(name = "home")
+    public Home[] homes;
+
+    public HomesRequest() {
+        super();
     }
 
-    public void setHome(Home home) {
-        this.home = home;
+    public Home[] getHomes() {
+        return homes;
+    }
+
+    public void setHomes(Home[] homes) {
+        this.homes = homes;
     }
 
     @Override
     public String toString() {
-        return "ViewerByHome [viewer= " + super.toString() + ", home=" + home + "]";
+        return "HomesRequest [homes=" + Arrays.toString(homes) + "]";
     }
-
-	
 
 }

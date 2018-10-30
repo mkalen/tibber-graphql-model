@@ -1,5 +1,8 @@
 package no.tibber.api.model;
 
+import java.io.Serializable;
+
+import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
 import io.aexp.nodes.graphql.annotations.GraphQLProperty;
 
 /**
@@ -8,24 +11,27 @@ import io.aexp.nodes.graphql.annotations.GraphQLProperty;
  * @author Martin Kalén
  */
 @GraphQLProperty(name = "home")
-public class Home {
+public class Home implements Serializable {
+
+    @GraphQLIgnore
+    private static final long serialVersionUID = 1L;
 
     public String id;
     public String timeZone;
     public String appNickname;
     public HomeAvatar appAvatar;
-    public int size;
+    public Integer size;
     public HomeType type;
-    public int numberOfResidents;
+    public Integer numberOfResidents;
     public HeatingSource primaryHeatingSource;
     public boolean hasVentilationSystem;
     public Address address;
     public LegalEntity owner;
-    // public MeteringPointData meteringPointData;
-    // public Subscription currentSubscription;
-    // public Subscription[] subscriptions;
-    // public HomeConsumptionConnection consumption;
-    // public HomeFeatures features;
+    public MeteringPointData meteringPointData;
+    public Subscription currentSubscription;
+    //public Subscription[] subscriptions;
+    //public HomeConsumptionConnection consumption;
+    public HomeFeatures features;
 
     public Home() {
     }
@@ -62,11 +68,11 @@ public class Home {
         this.appAvatar = appAvatar;
     }
 
-    public int getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
@@ -74,15 +80,15 @@ public class Home {
         return type;
     }
 
-    public void setType(HomeType homeType) {
-        this.type = homeType;
+    public void setType(HomeType type) {
+        this.type = type;
     }
 
-    public int getNumberOfResidents() {
+    public Integer getNumberOfResidents() {
         return numberOfResidents;
     }
 
-    public void setNumberOfResidents(int numberOfResidents) {
+    public void setNumberOfResidents(Integer numberOfResidents) {
         this.numberOfResidents = numberOfResidents;
     }
 
@@ -118,12 +124,38 @@ public class Home {
         this.owner = owner;
     }
 
+    public MeteringPointData getMeteringPointData() {
+        return meteringPointData;
+    }
+
+    public void setMeteringPointData(MeteringPointData meteringPointData) {
+        this.meteringPointData = meteringPointData;
+    }
+
+    public Subscription getCurrentSubscription() {
+        return currentSubscription;
+    }
+
+    public void setCurrentSubscription(Subscription currentSubscription) {
+        this.currentSubscription = currentSubscription;
+    }
+
+    public HomeFeatures getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(HomeFeatures features) {
+        this.features = features;
+    }
+
     @Override
     public String toString() {
         return "Home [id=" + id + ", timeZone=" + timeZone + ", appNickname=" + appNickname + ", appAvatar=" + appAvatar
                 + ", size=" + size + ", type=" + type + ", numberOfResidents=" + numberOfResidents
                 + ", primaryHeatingSource=" + primaryHeatingSource + ", hasVentilationSystem=" + hasVentilationSystem
-                + ", address=" + address + ", owner=" + owner + "]";
+                + ", address=" + address + ", owner=" + owner + ", meteringPointData=" + meteringPointData
+                + ", currentSubscription=" + currentSubscription
+                + ", features=" + features + "]";
     }
 
 }

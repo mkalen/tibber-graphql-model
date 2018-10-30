@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>se.kalen</groupId>
     <artifactId>tibber-graphql-model</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <name>Tibber GraphQL Model</name>
     <description>Tibber GraphSQL API Model Classes</description>
 

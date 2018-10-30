@@ -1,7 +1,9 @@
 package no.tibber.api.model;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
+import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
 import io.aexp.nodes.graphql.annotations.GraphQLProperty;
 
 /**
@@ -10,7 +12,10 @@ import io.aexp.nodes.graphql.annotations.GraphQLProperty;
  * @author Martin Kalén
  */
 @GraphQLProperty(name = "viewer")
-public class Viewer {
+public class Viewer implements Serializable {
+
+    @GraphQLIgnore
+    private static final long serialVersionUID = 1L;
 
     public String login;
     public String name;
