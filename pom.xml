@@ -10,13 +10,14 @@
 
     <properties>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+        <aexp.nodes.version>0.3.1</aexp.nodes.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>io.aexp.nodes.graphql</groupId>
             <artifactId>nodes</artifactId>
-            <version>0.3.0</version>
+            <version>${aexp.nodes.version}</version>
         </dependency>
     </dependencies>
 

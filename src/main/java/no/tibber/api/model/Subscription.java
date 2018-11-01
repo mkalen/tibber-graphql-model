@@ -13,14 +13,14 @@ import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
 public class Subscription implements Serializable {
 
     @GraphQLIgnore
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
     public String id;
     public LegalEntity subscriber;
     public OffsetDateTime validFrom;
     public OffsetDateTime validTo;
-    public String status;
-    //public PriceInfo priceInfo;
+    public Status status;
+    public PriceInfo priceInfo;
 
     public Subscription() {
     }
@@ -57,18 +57,26 @@ public class Subscription implements Serializable {
         this.validTo = validTo;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public PriceInfo getPriceInfo() {
+        return priceInfo;
+    }
+
+    public void setPriceInfo(PriceInfo priceInfo) {
+        this.priceInfo = priceInfo;
     }
 
     @Override
     public String toString() {
         return "Subscription [id=" + id + ", subscriber=" + subscriber + ", validFrom=" + validFrom + ", validTo="
-                + validTo + ", status=" + status + "]";
+                + validTo + ", status=" + status + ", priceInfo=" + priceInfo + "]";
     }
 
 }

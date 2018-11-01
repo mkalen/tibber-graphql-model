@@ -1,8 +1,11 @@
-package no.tibber.api.model;
+package no.tibber.api.model.query;
 
 import io.aexp.nodes.graphql.annotations.GraphQLArgument;
 import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
 import io.aexp.nodes.graphql.annotations.GraphQLProperty;
+import no.tibber.api.model.Home;
+import no.tibber.api.model.HomeWithConsumption;
+import no.tibber.api.model.Viewer;
 
 /**
  * Tibber GraphQL API model.
@@ -10,7 +13,7 @@ import io.aexp.nodes.graphql.annotations.GraphQLProperty;
  * @author Martin Kalén
  */
 @GraphQLProperty(name = "viewer")
-public class HomeRequest extends Viewer {
+public class HomeConsumptionRequest extends Viewer {
 
     @GraphQLIgnore
     private static final long serialVersionUID = 1L;
@@ -18,9 +21,9 @@ public class HomeRequest extends Viewer {
     @GraphQLProperty(name = "home", arguments = {
             @GraphQLArgument(name = "id")
     })
-    public Home home;
+    public HomeWithConsumption home;
 
-    public HomeRequest() {
+    public HomeConsumptionRequest() {
         super();
     }
 
@@ -28,7 +31,7 @@ public class HomeRequest extends Viewer {
         return home;
     }
 
-    public void setHome(Home home) {
+    public void setHome(HomeWithConsumption home) {
         this.home = home;
     }
 

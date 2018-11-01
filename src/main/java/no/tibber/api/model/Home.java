@@ -1,6 +1,7 @@
 package no.tibber.api.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
 import io.aexp.nodes.graphql.annotations.GraphQLProperty;
@@ -16,7 +17,7 @@ public class Home implements Serializable {
     @GraphQLIgnore
     private static final long serialVersionUID = 1L;
 
-    public String id;
+    public String id; // TODO: UUID?
     public String timeZone;
     public String appNickname;
     public HomeAvatar appAvatar;
@@ -29,7 +30,7 @@ public class Home implements Serializable {
     public LegalEntity owner;
     public MeteringPointData meteringPointData;
     public Subscription currentSubscription;
-    //public Subscription[] subscriptions;
+    public List<Subscription> subscriptions;
     //public HomeConsumptionConnection consumption;
     public HomeFeatures features;
 
