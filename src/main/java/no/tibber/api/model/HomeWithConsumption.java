@@ -14,15 +14,15 @@ import io.aexp.nodes.graphql.annotations.GraphQLProperty;
 public class HomeWithConsumption extends Home {
 
     @GraphQLIgnore
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
     @GraphQLArguments({
-        @GraphQLArgument(name = "resolution", type = "ConsumptionResolution!"),
-        //TODO @GraphQLArgument(name = "first"),
-        @GraphQLArgument(name = "last"),
-        //TODO @GraphQLArgument(name = "before"),
-        //TODO @GraphQLArgument(name = "after"),
-        @GraphQLArgument(name = "filterEmptyNodes", type = "Boolean", value = "true")
+        @GraphQLArgument(name = "resolution", type = "ConsumptionResolution"),
+        @GraphQLArgument(name = "first", type = "Integer", optional = true),
+        @GraphQLArgument(name = "last", type = "Integer", optional = true),
+        @GraphQLArgument(name = "before", optional = true),
+        @GraphQLArgument(name = "after", optional = true),
+        @GraphQLArgument(name = "filterEmptyNodes", type = "Boolean", value = "false")
     })
     public HomeConsumptionConnection consumption;
 

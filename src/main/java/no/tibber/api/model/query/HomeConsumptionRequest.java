@@ -3,7 +3,6 @@ package no.tibber.api.model.query;
 import io.aexp.nodes.graphql.annotations.GraphQLArgument;
 import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
 import io.aexp.nodes.graphql.annotations.GraphQLProperty;
-import no.tibber.api.model.Home;
 import no.tibber.api.model.HomeWithConsumption;
 import no.tibber.api.model.Viewer;
 
@@ -16,7 +15,7 @@ import no.tibber.api.model.Viewer;
 public class HomeConsumptionRequest extends Viewer {
 
     @GraphQLIgnore
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
     @GraphQLProperty(name = "home", arguments = {
             @GraphQLArgument(name = "id")
@@ -27,7 +26,7 @@ public class HomeConsumptionRequest extends Viewer {
         super();
     }
 
-    public Home getHome() {
+    public HomeWithConsumption getHome() {
         return home;
     }
 

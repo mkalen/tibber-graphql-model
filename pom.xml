@@ -4,13 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>se.kalen</groupId>
     <artifactId>tibber-graphql-model</artifactId>
-    <version>0.2.0-SNAPSHOT</version>
+    <version>0.2.1-SNAPSHOT</version>
     <name>Tibber GraphQL Model</name>
     <description>Tibber GraphSQL API Model Classes</description>
 
     <properties>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-        <aexp.nodes.version>0.3.1</aexp.nodes.version>
+        <!-- Build and install from https://github.com/mkalen/nodes/tree/feature/mkalen-pr -->
+        <aexp.nodes.version>0.4.0-SNAPSHOT</aexp.nodes.version>
     </properties>
 
     <dependencies>
