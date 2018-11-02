@@ -8,9 +8,9 @@ import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
 public class Price implements Serializable {
 
     @GraphQLIgnore
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
-    public String currency;
+    public Currency currency;
     public Float total;
     public Float energy;
     public Float tax;
@@ -19,11 +19,11 @@ public class Price implements Serializable {
     public Price() {
     }
 
-    public String getCurrency() {
+    public Currency getCurrency() {
         return currency;
     }
 
-    public void setCurrency(String currency) {
+    public void setCurrency(Currency currency) {
         this.currency = currency;
     }
 

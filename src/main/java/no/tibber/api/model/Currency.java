@@ -9,10 +9,10 @@ import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
  * 
  * @author Martin Kalén
  */
-public enum PriceResolution implements Serializable {
+public enum Currency implements Serializable {
 
-    HOURLY,
-    DAILY;
+    NOK,
+    SEK;
 
     @GraphQLIgnore
     private static final long serialVersionUID = 1L;

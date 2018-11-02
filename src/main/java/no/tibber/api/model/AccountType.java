@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
+
 /**
  * Tibber GraphQL API model.
  * 
@@ -14,6 +16,7 @@ public enum AccountType implements Serializable {
     @JsonProperty("customer")
     CUSTOMER;
 
+    @GraphQLIgnore
     private static final long serialVersionUID = 1L;
 
 }

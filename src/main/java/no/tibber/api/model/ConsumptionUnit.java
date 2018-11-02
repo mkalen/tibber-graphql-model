@@ -2,6 +2,8 @@ package no.tibber.api.model;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
 
 /**
@@ -9,10 +11,10 @@ import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
  * 
  * @author Martin Kalén
  */
-public enum PriceResolution implements Serializable {
+public enum ConsumptionUnit implements Serializable {
 
-    HOURLY,
-    DAILY;
+    @JsonProperty("kWh")
+    KILOWATTHOURS;
 
     @GraphQLIgnore
     private static final long serialVersionUID = 1L;
