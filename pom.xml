@@ -10,8 +10,7 @@
 
     <properties>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-        <!-- Build and install from https://github.com/mkalen/nodes/tree/feature/mkalen-pr -->
-        <aexp.nodes.version>0.4.0-SNAPSHOT</aexp.nodes.version>
+        <aexp.nodes.version>0.4.0</aexp.nodes.version>
         <hibernate.version>5.3.7.Final</hibernate.version>
     </properties>
 
