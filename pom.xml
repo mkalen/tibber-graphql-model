@@ -41,6 +41,14 @@
     </build>
 
     <repositories>
+        <!--
+            Bintray is sunset, for upgrade Jitpack might be an option for getting Nodes Maven packages.
+            See https://github.com/americanexpress/nodes/issues/121
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        -->
         <repository>
             <id>bintray-americanexpress-maven</id>
             <url>https://dl.bintray.com/americanexpress/maven</url>

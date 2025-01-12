@@ -15,7 +15,7 @@ import io.aexp.nodes.graphql.annotations.GraphQLProperty;
 public class Home implements Serializable {
 
     @GraphQLIgnore
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
     public String id; // TODO: UUID?
     public String timeZone;
@@ -149,6 +149,32 @@ public class Home implements Serializable {
         this.features = features;
     }
 
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Home other = (Home) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
+    }
+
+    
     @Override
     public String toString() {
         return "Home [id=" + id + ", timeZone=" + timeZone + ", appNickname=" + appNickname + ", appAvatar=" + appAvatar

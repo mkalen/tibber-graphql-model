@@ -18,11 +18,11 @@ import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
  * @author Martin Kalén
  */
 @Entity
-@Table(name="consumption")
-public class Consumption implements Serializable {
+@Table(name="production")
+public class Production implements Serializable {
 
     @GraphQLIgnore
-    private static final long serialVersionUID = 4L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name ="\"from\"")
@@ -38,24 +38,20 @@ public class Consumption implements Serializable {
     @Column(name = "unit_price_vat")
     public Float unitPriceVAT;
 
-    public Float consumption;
+    public Float production;
 
     @Enumerated(EnumType.ORDINAL)
-    @Column(name ="consumption_unit_id", columnDefinition = "INT2")
-    public Unit consumptionUnit;
+    @Column(name ="production_unit_id", columnDefinition = "INT2")
+    public Unit productionUnit;
 
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "currency_id", columnDefinition = "INT2")
     public Currency currency;
 
-    @Column(name = "unit_cost")
-    public Float cost;
+    @Column(name = "profit")
+    public Float profit;
 
-    @Deprecated
-    @Column(name = "total_cost")
-    public Float totalCost;
-
-    public Consumption() {
+    public Production() {
     }
 
     public OffsetDateTime getFrom() {
@@ -90,38 +86,28 @@ public class Consumption implements Serializable {
         this.unitPriceVAT = unitPriceVAT;
     }
 
-    public Float getConsumption() {
-        return consumption;
+    public Float getProduction() {
+        return production;
     }
 
-    public void setConsumption(Float consumption) {
-        this.consumption = consumption;
+    public void setProduction(Float production) {
+        this.production = production;
     }
 
-    public Unit getConsumptionUnit() {
-        return consumptionUnit;
+    public Unit getProductionUnit() {
+        return productionUnit;
     }
 
-    public void setConsumptionUnit(Unit consumptionUnit) {
-        this.consumptionUnit = consumptionUnit;
+    public void setProductionUnit(Unit productionUnit) {
+        this.productionUnit = productionUnit;
     }
 
-    @Deprecated
-    public Float getTotalCost() {
-        return totalCost;
+    public Float getProfit() {
+        return profit;
     }
 
-    @Deprecated
-    public void setTotalCost(Float totalCost) {
-        this.totalCost = totalCost;
-    }
-
-    public Float getCost() {
-        return cost;
-    }
-
-    public void setCost(Float cost) {
-        this.cost = cost;
+    public void setProfit(Float profit) {
+        this.profit = profit;
     }
 
     public Currency getCurrency() {
@@ -149,7 +135,7 @@ public class Consumption implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Consumption other = (Consumption) obj;
+        Production other = (Production) obj;
         if (from == null) {
             if (other.from != null)
                 return false;
@@ -166,8 +152,8 @@ public class Consumption implements Serializable {
     @Override
     public String toString() {
         return "Consumption [from=" + from + ", to=" + to + ", unitPrice=" + unitPrice + ", unitPriceVAT="
-                + unitPriceVAT + ", consumption=" + consumption + ", consumptionUnit=" + consumptionUnit
-                + ", totalCost=" + totalCost + ", cost=" + cost + ", currency=" + currency + "]";
+                + unitPriceVAT + ", production=" + production + ", productionUnit=" + productionUnit
+                + ", profit=" + profit + ", currency=" + currency + "]";
     }
 
 }

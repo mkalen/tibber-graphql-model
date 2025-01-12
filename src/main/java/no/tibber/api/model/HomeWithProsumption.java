@@ -11,10 +11,10 @@ import io.aexp.nodes.graphql.annotations.GraphQLProperty;
  * @author Martin Kalén
  */
 @GraphQLProperty(name = "home")
-public class HomeWithConsumption extends Home {
+public class HomeWithProsumption extends Home {
 
     @GraphQLIgnore
-    private static final long serialVersionUID = 3L;
+    private static final long serialVersionUID = 4L;
 
     @GraphQLArguments({
         @GraphQLArgument(name = "resolution", type = "EnergyResolution"),
@@ -25,8 +25,17 @@ public class HomeWithConsumption extends Home {
         @GraphQLArgument(name = "filterEmptyNodes", type = "Boolean", value = "false")
     })
     public HomeConsumptionConnection consumption;
+    @GraphQLArguments({
+        @GraphQLArgument(name = "resolution", type = "EnergyResolution"),
+        @GraphQLArgument(name = "first", type = "Integer", optional = true),
+        @GraphQLArgument(name = "last", type = "Integer", optional = true),
+        @GraphQLArgument(name = "before", optional = true),
+        @GraphQLArgument(name = "after", optional = true),
+        @GraphQLArgument(name = "filterEmptyNodes", type = "Boolean", value = "false")
+    })
+    public HomeProductionConnection production;
 
-    public HomeWithConsumption() {
+    public HomeWithProsumption() {
     }
 
     public HomeConsumptionConnection getConsumption() {
@@ -37,9 +46,17 @@ public class HomeWithConsumption extends Home {
         this.consumption = consumption;
     }
 
+    public HomeProductionConnection getProduction() {
+        return production;
+    }
+
+    public void setProduction(HomeProductionConnection production) {
+        this.production = production;
+    }
+
     @Override
     public String toString() {
-        return "HomeWithConsumption [consumption=" + consumption + "]";
+        return "HomeWithProsumption [consumption=" + consumption + ", production=" + production + "]";
     }
 
 }

@@ -11,7 +11,7 @@ import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
  * 
  * @author Martin Kalén
  */
-public enum ConsumptionUnit implements Serializable {
+public enum Unit implements Serializable {
 
     @JsonProperty("kWh")
     KILOWATTHOURS;
