@@ -9,7 +9,7 @@ import io.aexp.nodes.graphql.annotations.GraphQLIgnore;
  * 
  * @author Martin Kalén
  */
-public enum ConsumptionResolution implements Serializable {
+public enum EnergyResolution implements Serializable {
 
     HOURLY,
     DAILY,

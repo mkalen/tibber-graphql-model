@@ -14,10 +14,10 @@ import io.aexp.nodes.graphql.annotations.GraphQLProperty;
 public class HomeWithConsumption extends Home {
 
     @GraphQLIgnore
-    private static final long serialVersionUID = 2L;
+    private static final long serialVersionUID = 3L;
 
     @GraphQLArguments({
-        @GraphQLArgument(name = "resolution", type = "ConsumptionResolution"),
+        @GraphQLArgument(name = "resolution", type = "EnergyResolution"),
         @GraphQLArgument(name = "first", type = "Integer", optional = true),
         @GraphQLArgument(name = "last", type = "Integer", optional = true),
         @GraphQLArgument(name = "before", optional = true),

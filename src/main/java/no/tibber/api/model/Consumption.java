@@ -46,12 +46,16 @@ public class Consumption implements Serializable {
     @Column(name ="consumption_unit_id", columnDefinition = "INT2")
     public ConsumptionUnit consumptionUnit;
 
+    @Deprecated
     @Column(name = "total_cost")
     public Float totalCost;
 
+    @Deprecated
     @Column(name = "unit_cost")
     public Float unitCost;
-    
+
+    public Float cost;
+
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "currency_id", columnDefinition = "INT2")
     public Currency currency;
@@ -107,20 +111,32 @@ public class Consumption implements Serializable {
         this.consumptionUnit = consumptionUnit;
     }
 
+    @Deprecated
     public Float getTotalCost() {
         return totalCost;
     }
 
+    @Deprecated
     public void setTotalCost(Float totalCost) {
         this.totalCost = totalCost;
     }
 
+    @Deprecated
     public Float getUnitCost() {
         return unitCost;
     }
 
+    @Deprecated
     public void setUnitCost(Float unitCost) {
         this.unitCost = unitCost;
+    }
+
+    public Float getCost() {
+        return cost;
+    }
+
+    public void setCost(Float cost) {
+        this.cost = cost;
     }
 
     public Currency getCurrency() {

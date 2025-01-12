@@ -4,14 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>se.kalen</groupId>
     <artifactId>tibber-graphql-model</artifactId>
-    <version>0.3.0-SNAPSHOT</version>
+    <version>0.4.0-SNAPSHOT</version>
     <name>Tibber GraphQL Model</name>
     <description>Tibber GraphSQL API Model Classes</description>
 
     <properties>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <aexp.nodes.version>0.4.0</aexp.nodes.version>
-        <hibernate.version>5.3.7.Final</hibernate.version>
+        <hibernate.version>5.6.14.Final</hibernate.version>
     </properties>
 
     <dependencies>
